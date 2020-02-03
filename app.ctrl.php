@@ -16,7 +16,7 @@ while( false !== ( $DIR = readdir($fp) ) ) {
     $photoData[$numGal]["description"] = 
       file_get_contents("photos/" . $DIR . "/description.txt");
 
-	// gallery directory
+	  // gallery directory
     $photoData[$numGal]["directory"] = $DIR;
 	  
     // open the gallery folder, get the photo names and sort them
