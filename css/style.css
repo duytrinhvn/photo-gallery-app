@@ -1,0 +1,36 @@
+h1, h5, p, a {
+    color: #514F43;
+}
+.title{
+    padding-top: 2%;
+    text-align: center;
+}
+.container-fluid {
+    background-color: #EFEDDE;  
+    padding-bottom: 4%;
+    height: 100%;
+}
+.inner-container {
+    margin-top: 4%;
+    background-color: #E3DFC4;
+    border-radius: 3%;
+}
+.card {
+    background-color: #8D8A76;  
+    margin-right: 4%;
+    height: 100%;
+}
+.card-body {
+    background-color: #8D8A76;
+    text-align: center;
+    height: 100%;
+}
+.row {
+    padding-left: 5%; 
+    padding-right: 5%; 
+    padding-top: 5%; 
+    padding-bottom: 5%;
+}
+.single-photo {
+    margin-left: 5%;
+}

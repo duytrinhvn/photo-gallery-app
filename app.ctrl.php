@@ -8,7 +8,6 @@ $numGal = 0;
 // open the photos folder
 $fp = opendir("photos");
 while( false !== ( $DIR = readdir($fp) ) ) {
- 
   // read any directory that isn't . or ..
   if (($DIR !== (".")) && ($DIR !== (".."))) {
 
@@ -33,11 +32,32 @@ while( false !== ( $DIR = readdir($fp) ) ) {
   $numGal++;
 }
 
+if(isset($_REQUEST['directory']) && !isset($_REQUEST['id'])){
+  $requestedDir = $_REQUEST['directory'];
+   foreach($photoData as $row ){
+     if($row['directory'] === $requestedDir){
+       $TPL['requestedGal'] = $row;
+       break;
+     }
+  }
+}
+else if(isset($_REQUEST['directory']) && isset($_REQUEST['id'])) {
+  $requestedPhoto = $_REQUEST['id'];
+  $requestedDir = $_REQUEST['directory'];
+   foreach($photoData as $row ){
+     if($row['directory'] === $requestedDir){
+       $TPL['requestedGal'] = $row;
+       $TPL['requestedPhoto'] = $row['photos'][$requestedPhoto];
+     }
+  }
+}
 
+
+$TPL['results'] = $photoData;
+include 'app.view.php';
 ?>
 
-<!-- Let's look at the contents of $photoData...  -->
-<pre><?php print_r($photoData); ?></pre>
+
 
 
 
